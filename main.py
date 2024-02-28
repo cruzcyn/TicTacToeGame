@@ -16,6 +16,45 @@ def print_board(game_board):
     print("---------")
     print(game_board[2][0] + " | " + game_board[2][0] + " | " + game_board[2][0])
 
+# Check winning conditions
+def check_horizontals(game_board):
+    """ Checks that the strings in the horizontals are all the same, but that they aren't whitespaces. If so, updates global variable 
+    for winner to the current_player and returns True."""
+    global winner
+    if game_board[0][0] == game_board[0][1] == game_board[0][2] and game_board[0][0] != " ":
+        winner = current_player
+        return True
+    elif game_board[1][0] == game_board[1][1] == game_board[1][2] and game_board[1][0] != " ":
+        winner = current_player
+        return True
+    elif game_board[2][0] == game_board[2][1] == game_board[2][2] and game_board[2][0] != " ":
+        winner = current_player
+        return True
+    
+def check_verticals(game_board):
+    """ Checks that the strings in the verticals are all the same, but that they aren't whitespaces. If so, updates global variable 
+    for winner to the current_player and returns True."""
+    global winner
+    if game_board[0][0] == game_board[1][0] == game_board[2][0] and game_board[0][0] != " ":
+        winner = current_player
+        return True
+    elif game_board[0][1] == game_board[1][1] == game_board[2][1] and game_board[0][1] != " ":
+        winner = current_player
+        return True
+    elif game_board[0][2] == game_board[1][2] == game_board[2][2] and game_board[0][2] != " ":
+        winner = current_player
+        return True
+    
+def check_diagonals(game_board):
+    """ Checks that the strings in the diagonals are all the same, but that they aren't whitespaces. If so, updates global variable 
+    for winner to the current_player and returns True."""
+    global winner
+    if game_board[0][0] == game_board[1][1] == game_board[2][2] and game_board[0][0] != " ":
+        winner = current_player
+        return True
+    elif game_board[0][2] == game_board[1][1] == game_board[2][0] and game_board[0][2] != " ":
+        winner = current_player
+        return True
 
 # GAME LOGIC IMPLEMENTATION
 
