@@ -9,9 +9,9 @@ playing = True
 
 # PRINT GAMEBOARD TO THE CONSOLE 
 
-# If done inside of a function, split into different lines of print statements, 
-# we can print something that looks like a board
+# If done inside of a function and split into different lines of print statements, we can print something to the console that looks like a board
 # while preventing writing so many repetitive lines of code throughout the game
+
 def printBoard(game_board):
     """ Prints the list that represents the gameboard formatted in a way that makes it look like the game when it's played with pen and paper."""
     print(game_board[0] + " | " + game_board[1] + " | " + game_board[2])
