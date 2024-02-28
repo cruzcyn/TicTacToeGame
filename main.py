@@ -73,10 +73,18 @@ while playing:
     if board[row][column] == " ":
         if current_player == 1:
             board[row][column] = "X"
-            current_player = 2
+            if check_horizontals or check_verticals or check_diagonals:
+                playing = False
+                print(f"The winner is player {current_player}!")
+            else:
+                current_player = 2
         else:
             board[row][column] = "O"
-            current_player = 1
+            if check_horizontals or check_verticals or check_diagonals:
+                playing = False
+                print(f"The winner is player {current_player}!")
+            else:
+                current_player = 1
     else:
         print("Sorry, that spot's already taken! Choose another.")
 
