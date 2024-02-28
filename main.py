@@ -41,6 +41,12 @@ def check_diagonals(game_board):
     elif game_board[0][2] == game_board[1][1] == game_board[2][0] and game_board[0][2] != " ":
         return True
 
+# Check for tie:
+def check_tie(game_board):
+    """ Checks if there are any more whitespaces in the board and returns true in case there aren't (meaning that the board is full)"""
+    if " " not in board:
+        return True
+
 # GAME LOGIC IMPLEMENTATION
 
 # Greet user
@@ -61,6 +67,9 @@ while playing:
             if check_horizontals or check_verticals or check_diagonals:
                 playing = False
                 print(f"The winner is player {current_player}!")
+            elif check_tie(board):
+                playing = False
+                print(f"There's a tie!")
             else:
                 current_player = 2
         else:
