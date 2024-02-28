@@ -1,7 +1,7 @@
 board = [
-    " ", " ", " ",
-    " ", " ", " ",
-    " ", " ", " ",
+    [" ", " ", " "],
+    [" ", " ", " "],
+    [" ", " ", " "],
 ]
 
 winner = None
@@ -13,16 +13,31 @@ playing = True
 # while preventing writing so many repetitive lines of code throughout the game
 
 def printBoard(game_board):
-    """ Prints the list that represents the gameboard formatted in a way that makes it look like the game when it's played with pen and paper."""
-    print(game_board[0] + " | " + game_board[1] + " | " + game_board[2])
+    """ Prints the list that represents the gameboard, separating each item so that what is printed looks like the actual gameboard."""
+    print(game_board[0][0] + " | " + game_board[0][1] + " | " + game_board[0][2])
     print("---------")
-    print(game_board[3] + " | " + game_board[4] + " | " + game_board[5])
+    print(game_board[1][0] + " | " + game_board[1][0] + " | " + game_board[1][0])
     print("---------")
-    print(game_board[6] + " | " + game_board[7] + " | " + game_board[8])
+    print(game_board[2][0] + " | " + game_board[2][0] + " | " + game_board[2][0])
 
 printBoard(board)
 
 # TODO: take player input
+
+
+# GAME LOGIC IMPLEMENTATION
+
+# Greet user
+print("Welcome to TicTacToe!")
+printBoard(board)
+
+# Game loop
+#while playing:
+#    printBoard(board)
+    
+    # Ask for player input
+#    current_player_input = input("")
+
 # TODO: check if space in board is empty
 # TODO: check for win or tie
 # TODO: switch player
