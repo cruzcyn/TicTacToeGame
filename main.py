@@ -29,14 +29,23 @@ printBoard(board)
 
 # Greet user
 print("Welcome to TicTacToe!")
-printBoard(board)
 
 # Game loop
-#while playing:
-#    printBoard(board)
+while playing:
+    printBoard(board)
     
     # Ask for player input
-#    current_player_input = input("")
+    current_player_input = input("In which row and column, respectively, would you like to make your move? ")
+    row = int(current_player_input.split(",")[0])
+    column = int(current_player_input.split(",")[1])
+
+    # TODO: check if space in board is empty
+    if board[row][column] == " ":
+        
+
+    # Safe exit from while loop for testing purposes:
+    playing = False
+    print("Bye!")
 
 # TODO: check if space in board is empty
 # TODO: check for win or tie
