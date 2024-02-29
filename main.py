@@ -87,13 +87,13 @@ while playing:
             board[current_player_input] = "O"
             if check_horizontals(board) or check_verticals(board) or check_diagonals(board):
                 playing = False
+                print_board(board)
                 print(f"The winner is player {current_player}!")
             elif check_tie(board):
                 playing = False
+                print_board(board)
                 print(f"There's a tie!")
             else:
                 current_player = 1
     else:
         print("Sorry, that spot's already taken! Choose another.")
-
-
